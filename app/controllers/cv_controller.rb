@@ -6,8 +6,9 @@ class CvController < ApplicationController
   end
 
   def new
-    redirect_to edit_cv_path(id: current_user.cv.id) if current_user.cv
+    # redirect_to edit_cv_path(id: current_user.cv.id) if current_user.cv
     @cv = Cv.new
+    @cv.content = File.read(Rails.root.join("app/templates/cv_template.md"))
   end
 
   def create
