@@ -1,0 +1,17 @@
+{
+  "name": "cv_generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Franta1205/cv_app.git"
+  },
+  "private": true,
+  "dependencies": {
+    "simplemde": "^1.11.2"
+  }
+}
