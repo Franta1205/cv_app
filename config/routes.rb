@@ -8,4 +8,6 @@ Rails.application.routes.draw do
       get :edit_your_cv
     end
   end
+
+  resources :docs
 end
