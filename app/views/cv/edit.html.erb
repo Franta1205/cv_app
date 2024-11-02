@@ -2,7 +2,7 @@
   <div class="mx-auto max-w-4xl bg-white rounded-lg shadow-md p-8">
     <h2 class="text-3xl font-semibold text-gray-900 mb-4">Edit Your CV</h2>
 
-    <%= form_with(model: @cv, local: true, url: cv_index_path) do |form| %>
+    <%= form_with(model: @cv, local: true, url: cv_path(@cv), method: :patch) do |form| %>
 
       <%= csrf_meta_tags %>
 

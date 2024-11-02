@@ -81,3 +81,7 @@ gem "omniauth-github"
 gem "standardrb", "~> 1.0"
 gem 'dotenv-rails', groups: [:development, :test]
 
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
+gem 'redcarpet'
+

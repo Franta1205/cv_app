@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CvController < ApplicationController
   before_action :authenticate_user!, except: %i[home show]
   def home
@@ -23,8 +25,13 @@ class CvController < ApplicationController
     @cv = Cv.find(params[:id])
   end
 
-  def show
-
+  def update
+    @cv = Cv.find(params[:id])
+    if @cv.update(cv_params)
+      redirect_to edit_cv_path(id: @cv.id), notice: 'CV was successfully updated.'
+    else
+      redirect_to edit_cv_path(id: @cv.id), alert: 'CV was not updated.'
+    end
   end
 
   private
