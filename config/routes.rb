@@ -3,5 +3,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   root "cv#home"
-  resources :cv
+  resources :cv do
+    collection do
+      get :edit_your_cv
+    end
+  end
 end

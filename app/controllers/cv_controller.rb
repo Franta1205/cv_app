@@ -22,6 +22,14 @@ class CvController < ApplicationController
     end
   end
 
+  def edit_your_cv
+    @cv = current_user.cv
+    if @cv
+      redirect_to edit_cv_path(@cv)
+    else
+      redirect_to new_cv_path
+    end
+  end
   def edit
     @cv = Cv.find(params[:id])
   end
