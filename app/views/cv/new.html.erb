@@ -1,0 +1,24 @@
+<div class="px-6 py-24 lg:px-8">
+  <div class="mx-auto max-w-4xl bg-white rounded-lg shadow-md p-8">
+    <h2 class="text-3xl font-semibold text-gray-900 mb-4">Create Your CV</h2>
+
+    <form>
+      <%= csrf_meta_tags %>
+
+      <div class="editor-container">
+        <textarea id="markdown-editor" name="cv[content]" rows="20" class="w-full h-96 p-4 text-sm text-gray-800 bg-white rounded border border-gray-300 shadow-inner"></textarea>
+      </div>
+
+      <div class="mt-6 text-right">
+        <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded shadow hover:bg-indigo-500 focus:ring">Save CV</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        new SimpleMDE({ element: document.getElementById("markdown-editor") });
+    });
+</script>
+
