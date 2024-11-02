@@ -32,10 +32,12 @@ class CvController < ApplicationController
   end
   def edit
     @cv = Cv.find(params[:id])
+    authorize! @cv
   end
 
   def update
     @cv = Cv.find(params[:id])
+    authorize! @cv
     if @cv.update(cv_params)
       redirect_to edit_cv_path(id: @cv.id), notice: 'CV was successfully updated.'
     else

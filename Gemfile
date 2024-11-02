@@ -84,4 +84,5 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'redcarpet'
+gem 'action_policy'
 
