@@ -10,7 +10,11 @@
       <%= link_to 'Home', root_path, class: "text-sm/6 font-semibold text-gray-900" %>
       <%= link_to 'Getting Started', docs_path, class: "text-sm/6 font-semibold text-gray-900" %>
     </div>
-    <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+    <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-12">
+      <% if current_user %>
+        <%= link_to "Sign Out", destroy_user_session_path, class: "text-sm/6 font-semibold text-gray-900" %>
+      <% end %>
+
       <%= link_to "Edit Your CV <span aria-hidden='true'>&rarr;</span>".html_safe, edit_your_cv_cv_index_path, class: "text-sm/6 font-semibold text-gray-900" %>
     </div>
   </nav>
