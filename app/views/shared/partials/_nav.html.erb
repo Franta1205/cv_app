@@ -13,9 +13,17 @@
     <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-12">
       <% if current_user %>
         <%= link_to "Sign Out", destroy_user_session_path, class: "text-sm/6 font-semibold text-gray-900" %>
-      <% end %>
-
-      <%= link_to "Edit Your CV <span aria-hidden='true'>&rarr;</span>".html_safe, edit_your_cv_cv_index_path, class: "text-sm/6 font-semibold text-gray-900" %>
+        <%= link_to "Edit Your CV <span aria-hidden='true'>&rarr;</span>".html_safe, edit_your_cv_cv_index_path, class: "text-sm/6 font-semibold text-gray-900" %>
+      <% else %>
+        <div data-controller="login-dialog">
+          <button data-action="click->login-dialog#show" type="button" class="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+            Edit Your CV <span aria-hidden="true">&rarr;</span>
+          </button>
+          <div class="hidden" data-login-dialog-target="dialog">
+            <%= render 'shared/partials/dialogs/login' %>
+          </div>
+        </div>
+    <% end %>
     </div>
   </nav>
 </header>
